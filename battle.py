@@ -1,7 +1,7 @@
 import ex0
 
 
-def verify_factory(factory: CreatureFactory) -> None:
+def verify_factory(factory: ex0.CreatureFactory) -> None:
 
     factory_base = factory.create_base()
     factory_evolved = factory.create_evolved()
@@ -12,11 +12,13 @@ def verify_factory(factory: CreatureFactory) -> None:
     print(f"{factory_evolved.attack()}")
 
 
-def creature_fight(water: CreatureFactory, flame: CreatureFactory) -> None:
-    
+def creature_fight(
+    water: ex0.CreatureFactory, flame: ex0.CreatureFactory
+) -> None:
+
     water_base = water.create_base()
     flame_base = flame.create_base()
-    
+
     print(f"{flame_base.describe()}")
     print(" vs.")
     print(f"{water_base.describe()}")
@@ -31,4 +33,4 @@ if __name__ == "__main__":
     print("\nTesting Factory")
     verify_factory(ex0.WaterFactory())
     print("\nTesting battle")
-    creature_fight(ex0.WaterFactory(), ex0.FlameFactory())    
+    creature_fight(ex0.WaterFactory(), ex0.FlameFactory())
