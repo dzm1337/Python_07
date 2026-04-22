@@ -3,7 +3,7 @@ from ex2.abstract_strategy import BattleError, BattleStrategy
 
 
 def battle(
-    opponents_config: list[tuple[CreatureFactory, BattleStrategy]],
+    opponents_config: list[tuple[CreatureFactory, type[BattleStrategy]]],
 ) -> None:
 
     fighters: list[BattleStrategy] = []
@@ -11,7 +11,7 @@ def battle(
     for factory, strategy_class in opponents_config:
         creature: Creature = factory.create_base()
         fighters.append(strategy_class(creature))
- 
+
     print("*** Tournament ***")
     print(f"{len(fighters)} opponents involved\n")
 
@@ -36,7 +36,11 @@ def battle(
 if __name__ == "__main__":
     from ex0.factory import FlameFactory, WaterFactory
     from ex1.factory import HealingCreatureFactory, TransformCreatureFactory
-    from ex2.strategies import AggressiveStrategy, DefensiveStrategy, NormalStrategy
+    from ex2.strategies import (
+        AggressiveStrategy,
+        DefensiveStrategy,
+        NormalStrategy,
+    )
 
     print("Tournament 0 (basic)")
     print("[ (Flameling+Normal), (Healing+Defensive) ]")
