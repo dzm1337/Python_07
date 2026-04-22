@@ -1,11 +1,5 @@
-from ex1 import (
-    Bloomelle,
-    HealingCreatureFactory,
-    Morphagon,
-    Shiftling,
-    Sproutling,
-    TransformCreatureFactory,
-)
+from ex1 import HealingCreatureFactory, TransformCreatureFactory
+from ex1.creatures import Sproutling, Bloomelle, Shiftling, Morphagon
 
 
 def healing_creature_actions() -> None:

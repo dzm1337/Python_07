@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from ex0 import Creature
+from ex0.abstract_creatures import Creature
 
 
 class BattleStrategy(ABC):
@@ -8,11 +8,11 @@ class BattleStrategy(ABC):
         self.creature = creature
 
     @abstractmethod
-    def is_valid(self):
+    def is_valid(self, creature: Creature):
         pass
 
     @abstractmethod
-    def act(self):
+    def act(self, creature: Creature):
         pass
 
 
